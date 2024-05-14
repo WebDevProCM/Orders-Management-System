@@ -1,0 +1,28 @@
+<script src="http://localhost:3000/js/models/profile.js"></script>
+
+<span id="updateModal" style="visibility: hidden;"></span>
+<span id="createModal" style="visibility:hidden ;"></span>
+<div class="profile">
+    <div class="profile__img">
+        <img src="/images/admin/{{user.image}}" alt="admin-prfile-image">
+    </div>
+    <div class="profile__form">
+        <form enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="file" class="form-label">Admin Profile Picture</label>
+                <input class="form-control" type="file" id="file">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" value="{{user.email}}" name="email" disabled>
+                 <div id="emailHelp" class="form-text">You cannot update your email address!.</div>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" value="{{user.name}}" name="name">
+            </div>
+            <input type="hidden" value="{{user._id}}" id="hiddenId">
+            <button type="submit" class="btn btn-secondary" id="submit-btn">Submit</button>
+            </form>
+    </div>
+</div>

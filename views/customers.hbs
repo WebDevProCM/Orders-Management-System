@@ -1,0 +1,77 @@
+<script src="http://localhost:3000/js/models/customers.js"></script>
+
+<div class="orderDetails-nav">
+    <button type="button" class="btn btn-outline-primary" id="create-btn" onclick="showModal('#createModal')">+ADD</button>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>CUS-ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+</table>
+
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Customer</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#createModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="createForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#createModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update Customer</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#updateModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="updateForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <input type="hidden" id="hiddenId">
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#updateModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

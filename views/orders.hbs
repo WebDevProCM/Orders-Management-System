@@ -1,0 +1,130 @@
+<script src="http://localhost:3000/js/models/orders.js"></script>
+
+<div class="order-nav">
+    <ul class="order-nav__ul nav nav-underline">
+        <li class="nav-item">
+             <button class="nav-link" onclick="updateAllOrders()">All Orders</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" onclick="updateActive()">Active Orders</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" onclick="updatePending()">Pending Orders</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" onclick="updateCancelled()">Cancelled Orders</button>
+        </li>
+    </ul>
+    <button type="button" class="btn btn-outline-primary" id="create-btn" onclick="showModal('#createModal')">+ADD</button>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ORD-ID</th>
+            <th>Customer</th>
+            <th>Order Date</th>
+            <th>Delivery Date</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Paid</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+</table>
+
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a order</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#createModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="createForm">
+            <div class="mb-3">
+                <label for="customerId" class="form-label">Customer ID</label>
+                <input type="text" class="form-control" id="customerId" name="customerId">
+            </div>
+            <div class="mb-3">
+                <label for="orderedDate" class="form-label">Ordered Date</label>
+                <input type="date" class="form-control" id="orderedDate" name="orderedDate">
+            </div>
+            <div class="mb-3">
+                <label for="deliveryDate" class="form-label">Delivery Date</label>
+                <input type="date" class="form-control" id="deliveryDate" name="deliveryDate">
+            </div>
+            <div class="mb-3">
+                <label for="paid" class="form-label">Customer Paid/Not</label>
+                <select class="form-select" id="paid" name="paid">
+                  <option value="yes">Yes</option>
+                  <option value="No" selected>No</option>
+                </select>
+
+                {{!-- <input type="radio" class="form-control" id="paid" name="paid" value="No"> --}}
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status">
+                  <option value="1" selected>Preparing</option>
+                  <option value="2">Dispatched</option>
+                  <option value="3">Delivered</option>
+                  <option value="0">cancelled</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#createModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update Order</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#updateModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="updateForm">
+            <div class="mb-3">
+                <label for="orderedDate" class="form-label">Ordered Date</label>
+                <input type="date" class="form-control" id="orderedDate" name="orderedDate">
+            </div>
+            <div class="mb-3">
+                <label for="deliveryDate" class="form-label">Delivery Date</label>
+                <input type="date" class="form-control" id="deliveryDate" name="deliveryDate">
+            </div>
+            <div class="mb-3">
+                <label for="paid" class="form-label">Customer Paid/Not</label>
+                <select class="form-select" id="paid" name="paid">
+                  <option value="yes">Yes</option>
+                  <option value="No" selected>No</option>
+                </select>
+
+                {{!-- <input type="radio" class="form-control" id="paid" name="paid" value="No"> --}}
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status">
+                  <option value="1" selected>Preparing</option>
+                  <option value="2">Dispatched</option>
+                  <option value="3">Delivered</option>
+                  <option value="0">cancelled</option>
+                </select>
+            </div>
+            <input type="hidden" id="hiddenId">
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#updateModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

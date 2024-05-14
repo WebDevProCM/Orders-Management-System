@@ -1,0 +1,110 @@
+<script src="http://localhost:3000/js/models/products.js"></script>
+
+<div class="orderDetails-nav">
+    <button type="button" class="btn btn-outline-primary" id="create-btn" onclick="initiateCreate()">+ADD</button>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>PROD-ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+</table>
+
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Product</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#createModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="createForm" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <input type="number" class="form-control" id="status" name="status">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categories</label>
+                <select class="form-select" id="category" name="category">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#createModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update Product</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#updateModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="updateForm" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <input type="number" class="form-control" id="status" name="status">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categories</label>
+                <select class="form-select" id="category" name="category">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <input type="hidden" id="hiddenId">
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#updateModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

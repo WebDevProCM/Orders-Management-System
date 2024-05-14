@@ -1,0 +1,72 @@
+    <script src="http://localhost:3000/js/models/orderDetails.js"></script>
+
+<div class="orderDetails-nav">
+    <span class="hiddenOrderId">{{id}}</span>
+    <button type="button" class="btn btn-outline-primary" id="create-btn" onclick="showModal('#createModal')">+ADD</button>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>PRD-ID</th>
+            <th>Image</th>
+            <th>Quantity</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+</table>
+
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a orderDetail</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#createModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="createForm">
+            <div class="mb-3">
+                <label for="productId" class="form-label">Product ID</label>
+                <input type="text" class="form-control" id="productId" name="productId">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#createModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update OrderDetail</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="hideModal('#updateModal')"></button>
+      </div>
+      <div class="modal-body">
+        <form class="updateForm">
+              <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity">
+            </div>
+            <input type="hidden" id="hiddenId">
+            <button type="button" class="btn btn-secondary" onclick="hideModal('#updateModal')">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
